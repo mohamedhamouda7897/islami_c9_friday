@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_c9_frid/hadeth_details.dart';
 import 'package:islami_c9_frid/hadeth_model.dart';
+import 'package:islami_c9_frid/myThemeData.dart';
 
 class AhadethTab extends StatefulWidget {
   @override
@@ -16,8 +18,51 @@ class _AhadethTabState extends State<AhadethTab> {
       loadHadethFile();
     }
 
-    return Container(
-      color: Colors.purple,
+    return Center(
+      child: Column(
+        children: [
+          Image.asset("assets/images/hadeth_bg.png"),
+          Divider(
+            color: MyThemeData.primaryColor,
+            thickness: 3,
+          ),
+          Text(
+            "Ahadeth",
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: MyThemeData.blackColor),
+          ),
+          Divider(
+            color: MyThemeData.primaryColor,
+            thickness: 3,
+          ),
+          Expanded(
+            child: ListView.separated(
+              separatorBuilder: (context, index) => Divider(
+                thickness: 1,
+                color: MyThemeData.primaryColor,
+                endIndent: 40,
+                indent: 40,
+              ),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, HadethDetails.routeName,
+                        arguments: allAhadeth[index]);
+                  },
+                  child: Text(
+                    allAhadeth[index].name,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                );
+              },
+              itemCount: allAhadeth.length,
+            ),
+          )
+        ],
+      ),
     );
   }
 
