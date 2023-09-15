@@ -38,25 +38,26 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: MyThemeData.primaryColor,
             items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/quran.png")),
+                  icon: const ImageIcon(AssetImage("assets/images/quran.png")),
                   label: "َQuran",
                   backgroundColor: MyThemeData.primaryColor),
               BottomNavigationBarItem(
-                  icon: ImageIcon(
+                  icon: const ImageIcon(
                     AssetImage("assets/images/sebha.png"),
                   ),
                   label: "Sebha",
                   backgroundColor: MyThemeData.primaryColor),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/radio.png")),
+                  icon: const ImageIcon(AssetImage("assets/images/radio.png")),
                   label: "Radio",
                   backgroundColor: MyThemeData.primaryColor),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/ahadeth.png")),
+                  icon:
+                      const ImageIcon(AssetImage("assets/images/ahadeth.png")),
                   label: "Ahadeth",
                   backgroundColor: MyThemeData.primaryColor),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
+                  icon: const Icon(Icons.settings),
                   label: "Settings",
                   backgroundColor: MyThemeData.primaryColor),
             ],
@@ -69,9 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> tabs = [
     QuranTab(),
-    SebhaTab(),
-    RadioTab(),
+    const SebhaTab(),
+    const RadioTab(),
     AhadethTab(),
-    SettingsTab()
+    const SettingsTab()
   ];
 }

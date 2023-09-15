@@ -6,6 +6,8 @@ import 'package:islami_c9_frid/sura_model.dart';
 class SuraDetailsScreen extends StatefulWidget {
   static const String routeName = "SruaDetails";
 
+  const SuraDetailsScreen({super.key});
+
   @override
   State<SuraDetailsScreen> createState() => _SuraDetailsScreenState();
 }
@@ -21,7 +23,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     }
 
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
                 "assets/images/background.png",
@@ -72,7 +74,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   loadFile(int index) async {
     String file = await rootBundle.loadString("assets/files/${index + 1}.txt");
     List<String> lines = file.split("\n");
-    print(lines);
+    debugPrint(lines.toString());
     verses = lines;
     setState(() {});
   }
