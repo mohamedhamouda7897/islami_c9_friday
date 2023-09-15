@@ -122,6 +122,8 @@ class QuranTab extends StatelessWidget {
     "الناس"
   ];
 
+  QuranTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
