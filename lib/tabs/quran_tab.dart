@@ -140,7 +140,7 @@ class QuranTab extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
-                .copyWith(color: MyThemeData.blackColor),
+                .copyWith(color: Theme.of(context).colorScheme.onSecondary),
           ),
           Divider(
             color: MyThemeData.primaryColor,

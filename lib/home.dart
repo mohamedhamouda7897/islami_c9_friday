@@ -20,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset("assets/images/background.png",
+        Image.asset(Theme.of(context).colorScheme.brightness==Brightness.light
+            ?"assets/images/background.png"
+            :"assets/images/bg.png",
             width: double.infinity, fit: BoxFit.cover),
         Scaffold(
           appBar: AppBar(
@@ -36,31 +38,31 @@ class _HomeScreenState extends State<HomeScreen> {
               index = value;
               setState(() {});
             },
-            backgroundColor: MyThemeData.primaryColor,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             items: [
               BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage("assets/images/quran.png")),
                   label: "َQuran",
-                  backgroundColor: MyThemeData.primaryColor),
+                  backgroundColor: Theme.of(context).colorScheme.primary),
               BottomNavigationBarItem(
                   icon: const ImageIcon(
                     AssetImage("assets/images/sebha.png"),
                   ),
                   label: "Sebha",
-                  backgroundColor: MyThemeData.primaryColor),
+                  backgroundColor: Theme.of(context).colorScheme.primary),
               BottomNavigationBarItem(
                   icon: const ImageIcon(AssetImage("assets/images/radio.png")),
                   label: "Radio",
-                  backgroundColor: MyThemeData.primaryColor),
+                  backgroundColor: Theme.of(context).colorScheme.primary),
               BottomNavigationBarItem(
                   icon:
                       const ImageIcon(AssetImage("assets/images/ahadeth.png")),
                   label: "Ahadeth",
-                  backgroundColor: MyThemeData.primaryColor),
+                  backgroundColor: Theme.of(context).colorScheme.primary),
               BottomNavigationBarItem(
                   icon: const Icon(Icons.settings),
                   label: "Settings",
-                  backgroundColor: MyThemeData.primaryColor),
+                  backgroundColor: Theme.of(context).colorScheme.primary),
             ],
           ),
           body: tabs[index],
